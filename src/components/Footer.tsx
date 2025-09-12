@@ -34,7 +34,7 @@ const Footer = () => {
               <FacebookIcon size={20} />
             </a>
             <a
-              href="https://instagram.com"
+              href="https://web.instagram.com/sheen.prezoo.3/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white transition-colors hover:text-pink-600"

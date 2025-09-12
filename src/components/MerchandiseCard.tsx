@@ -1,5 +1,5 @@
-import React from 'react';
-import Image from 'next/image';
+import React from "react";
+import Image from "next/image";
 
 interface MerchandiseCardProps {
   imageSrc: string;
@@ -8,24 +8,31 @@ interface MerchandiseCardProps {
   link: string;
 }
 
-const MerchandiseCard: React.FC<MerchandiseCardProps> = ({ imageSrc, title, price, link }) => {
+const MerchandiseCard: React.FC<MerchandiseCardProps> = ({
+  imageSrc,
+  title,
+  price,
+  link,
+}) => {
   return (
-    <div className="bg-gray-800 rounded-lg overflow-hidden shadow-lg transform transition-transform duration-300 hover:scale-105">
+    <div className="transform overflow-hidden rounded-lg bg-gray-800 shadow-lg transition-transform duration-300 hover:scale-105">
       <Image
         src={imageSrc}
         alt={title}
-        width={300} 
-        height={300} 
-        className="w-full h-48 object-cover"
+        width={300}
+        height={300}
+        className="h-48 w-full object-cover"
       />
       <div className="p-4">
-        <h3 className="text-lg font-semibold text-white mb-2 line-clamp-2">{title}</h3>
-        <p className="text-gray-300 text-xl font-bold mb-4">{price}</p>
+        <h3 className="mb-2 line-clamp-2 text-lg font-semibold text-white">
+          {title}
+        </h3>
+        <p className="mb-4 text-xl font-bold text-gray-300">{price}</p>
         <a
           href={`https://wa.me/254743098036?text=I%20want%20to%20buy%20${encodeURIComponent(title)}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="block w-full bg-green-600 text-white text-center py-2 rounded-md hover:bg-green-700 transition-colors font-medium"
+          className="block w-full rounded-md bg-green-600 py-2 text-center font-medium text-white transition-colors hover:bg-green-700"
         >
           Buy Now
         </a>

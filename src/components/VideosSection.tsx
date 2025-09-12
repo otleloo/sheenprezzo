@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import VideoPopup from "./VideoPopup";
 import SupportMeSection from "./SupportMeSection";
-import SupportMeContinuationSection from "./SupportMeContinuationSection"; 
+import SupportMeContinuationSection from "./SupportMeContinuationSection";
 
 const videoData = [
   { id: "knAM-5SUszw", title: "Murder office video by sheen prezoo" },
@@ -21,7 +21,10 @@ const videoData = [
     title: "Sheen Prezoo Feat Roady Boy_Anatambua Official Audio mp3",
   },
   { id: "F6AbTbuFH8Y", title: "SHEEN PREZOO I MY STORY I OFFICIAL VIDEO 4K" },
-  { id: "_unPe-S854k", title: " KENYA YETU by Sheen prezoo ft S_kelvoz #kenya siyo ya mamako. " },
+  {
+    id: "_unPe-S854k",
+    title: " KENYA YETU by Sheen prezoo ft S_kelvoz #kenya siyo ya mamako. ",
+  },
 ];
 
 const VideoCard = ({
@@ -64,7 +67,7 @@ const VideosSection = () => {
   };
 
   return (
-    <> 
+    <>
       <section id="videos" className="bg-black py-16">
         <div className="container mx-auto px-4">
           <h2 className="mb-10 text-center text-3xl font-bold">
@@ -91,7 +94,7 @@ const VideosSection = () => {
         )}
       </section>
       <SupportMeSection />
-      <SupportMeContinuationSection /> 
+      <SupportMeContinuationSection />
     </>
   );
 };
