@@ -1,11 +1,11 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { YoutubeIcon, MenuIcon, XIcon } from "lucide-react"; 
+import { YoutubeIcon, MenuIcon, XIcon } from "lucide-react";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); 
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,7 +27,7 @@ const Navbar = () => {
       element.scrollIntoView({
         behavior: "smooth",
       });
-      setIsMobileMenuOpen(false); 
+      setIsMobileMenuOpen(false);
     }
   };
 
@@ -63,7 +63,7 @@ const Navbar = () => {
             CONTACT
           </button>
         </div>
-        <div className="flex items-center space-x-4"> 
+        <div className="flex items-center space-x-4">
           <a
             href="https://www.youtube.com/@sheenprezoo911/videos"
             target="_blank"
@@ -73,7 +73,7 @@ const Navbar = () => {
             <YoutubeIcon size={16} />
             <span>Subscribe</span>
           </a>
-          <div className="md:hidden"> 
+          <div className="md:hidden">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="text-white focus:outline-none"
@@ -86,28 +86,28 @@ const Navbar = () => {
 
       {/* Mobile Menu Overlay */}
       {isMobileMenuOpen && (
-        <div className="md:hidden fixed inset-0 bg-black bg-opacity-90 z-40 flex flex-col items-center justify-center space-y-6">
+        <div className="bg-opacity-90 fixed inset-0 z-40 flex flex-col items-center justify-center space-y-6 bg-black md:hidden">
           <button
             onClick={() => scrollToSection("home")}
-            className="text-white text-2xl font-medium hover:text-gray-300"
+            className="text-2xl font-medium text-white hover:text-gray-300"
           >
             HOME
           </button>
           <button
             onClick={() => scrollToSection("about")}
-            className="text-white text-2xl font-medium hover:text-gray-300"
+            className="text-2xl font-medium text-white hover:text-gray-300"
           >
             ABOUT ME
           </button>
           <button
             onClick={() => scrollToSection("videos")}
-            className="text-white text-2xl font-medium hover:text-gray-300"
+            className="text-2xl font-medium text-white hover:text-gray-300"
           >
             VIDEOS
           </button>
           <button
             onClick={() => scrollToSection("contact")}
-            className="text-white text-2xl font-medium hover:text-gray-300"
+            className="text-2xl font-medium text-white hover:text-gray-300"
           >
             CONTACT
           </button>

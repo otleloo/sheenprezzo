@@ -28,8 +28,8 @@ const Hero = () => {
               <div className="opacity-80">PREZZO</div>
             </h1>
             {/* Stroke Text - Absolutely positioned over normal text */}
-            <div className="absolute z-20 inset-0 flex flex-col justify-center z-20"> 
-              <h1 className="text-[5rem] leading-[0.8] font-extrabold tracking-tighter text-center md:text-[16rem]">
+            <div className="absolute inset-0 z-20 flex flex-col justify-center">
+              <h1 className="text-center text-[5rem] leading-[0.8] font-extrabold tracking-tighter md:text-[16rem]">
                 <div className="text-stroke">SHEEN</div>
                 <div className="text-stroke">PREZZO</div>
               </h1>
