@@ -1,6 +1,6 @@
 "use client";
 
-import React from 'react';
+import React from "react";
 
 interface VideoPopupProps {
   videoId: string;
@@ -9,11 +9,11 @@ interface VideoPopupProps {
 
 const VideoPopup: React.FC<VideoPopupProps> = ({ videoId, onClose }) => {
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4">
-      <div className="relative w-full h-3/4 max-w-screen-lg rounded-lg overflow-hidden">
+    <div className="bg-opacity-75 fixed inset-0 z-50 flex items-center justify-center bg-black p-4">
+      <div className="relative h-3/4 w-full max-w-screen-lg overflow-hidden rounded-lg">
         <button
           onClick={onClose}
-          className="absolute -top-8 right-0 text-white text-2xl z-10"
+          className="absolute -top-8 right-0 z-10 text-2xl text-white"
         >
           &times;
         </button>
@@ -22,7 +22,7 @@ const VideoPopup: React.FC<VideoPopupProps> = ({ videoId, onClose }) => {
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
-          className="w-full h-full"
+          className="h-full w-full"
         ></iframe>
       </div>
     </div>

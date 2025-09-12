@@ -1,34 +1,42 @@
 "use client";
 
-import React, { useState } from 'react';
-import Image from 'next/image';
-import VideoPopup from './VideoPopup';
+import React, { useState } from "react";
+import Image from "next/image";
+import VideoPopup from "./VideoPopup";
 
 const videoData = [
-  { id: 'knAM-5SUszw', title: 'Video 1' },
-  { id: 'gnQitZzauGs', title: 'Video 2' },
-  { id: '8ogm2afRM9M', title: 'Video 3' },
-  { id: 'vzO4MdCXyRA', title: 'Video 4' },
-  { id: 'fiU56A5CL00', title: 'Video 5' },
-  { id: 'oXhX_MW0eqw', title: 'Video 6' },
-  { id: 'F6AbTbuFH8Y', title: 'Video 7' },
-  { id: '_unPe-S854k', title: 'Video 8' },
+  { id: "knAM-5SUszw", title: "Murder office video by sheen prezoo" },
+  { id: "gnQitZzauGs", title: "LOLIPOP - SHEEN PREZZO (MUSIC VIDEO)" },
+  { id: "8ogm2afRM9M", title: "Spendi: by Sheen prezoo ft moto flame ft Dj.Qver ; Official audio 💥" },
+  { id: "vzO4MdCXyRA", title: "Tafuta pesa by sheen prezoo 💥💲💸" },
+  { id: "fiU56A5CL00", title: "BLESSINGS_SHEEN PREZO0_OFFICIAL AUDIO" },
+  { id: "oXhX_MW0eqw", title: "Sheen Prezoo Feat Roady Boy_Anatambua Official Audio mp3" },
+  { id: "F6AbTbuFH8Y", title: "SHEEN PREZOO I MY STORY I OFFICIAL VIDEO 4K" },
+  { id: "_unPe-S854k", title: " KENYA YETU by Sheen prezoo ft S_kelvoz #kenya siyo ya mamako. " },
 ];
 
-const VideoCard = ({ videoId, title, onClick }: { videoId: string; title: string; onClick: () => void; }) => {
+const VideoCard = ({
+  videoId,
+  title,
+  onClick,
+}: {
+  videoId: string;
+  title: string;
+  onClick: () => void;
+}) => {
   const thumbnail = `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`;
   return (
     <div className="group cursor-pointer" onClick={onClick}>
-      <div className="overflow-hidden rounded-lg mb-2">
+      <div className="mb-2 overflow-hidden rounded-lg">
         <Image
           src={thumbnail}
           alt={title}
           width={320}
           height={180}
-          className="w-full h-48 object-cover transform transition-transform duration-300 group-hover:scale-105"
+          className="h-48 w-full transform object-cover transition-transform duration-300 group-hover:scale-105"
         />
       </div>
-      <h3 className="text-sm font-medium line-clamp-2 text-white group-hover:text-gray-300">
+      <h3 className="line-clamp-2 text-sm font-medium text-white group-hover:text-gray-300">
         {title}
       </h3>
     </div>
@@ -47,13 +55,13 @@ const VideosSection = () => {
   };
 
   return (
-    <section id="videos" className="py-16 bg-black">
+    <section id="videos" className="bg-black py-16">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-10">
+        <h2 className="mb-10 text-center text-3xl font-bold">
           CHECKOUT MY LATEST VIDEOS
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {videoData.map(video => (
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {videoData.map((video) => (
             <VideoCard
               key={video.id}
               videoId={video.id}
@@ -62,8 +70,8 @@ const VideosSection = () => {
             />
           ))}
         </div>
-        <div className="flex justify-center mt-10">
-          <button className="bg-gray-800 hover:bg-gray-700 text-white px-8 py-2 rounded-md transition-colors">
+        <div className="mt-10 flex justify-center">
+          <button className="rounded-md bg-gray-800 px-8 py-2 text-white transition-colors hover:bg-gray-700">
             Load More
           </button>
         </div>

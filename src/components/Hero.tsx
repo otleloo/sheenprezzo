@@ -1,38 +1,40 @@
-import React from 'react';
-import Image from 'next/image';
+import React from "react";
+import Image from "next/image";
 
 const Hero = () => {
   return (
-    <section id="home" className="pt-24 pb-16 relative overflow-hidden">
-      <div className="container mx-auto px-4 relative min-h-[90vh] flex flex-col justify-center">
-        {/* Large background text - bottom layer */}
-        <div className="relative z-0 max-w-full text-center mx-auto">
-          <h1 className="text-white text-[10rem] md:text-[16rem] font-extrabold leading-[0.8] tracking-tighter">
-            <div className="opacity-80">SHEEN</div>
-            <div className="opacity-80">PREZZO</div>
-          </h1>
-        </div>
-        {/* Hero image - middle layer */}
-        <div className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 w-full md:w-3/5 lg:w-1/2 h-full flex items-center justify-end">
-          <div className="relative w-full h-full flex items-center justify-center">
+    <section id="home" className="relative overflow-hidden pt-24 pb-16">
+      <div className="relative container mx-auto flex min-h-[90vh] flex-col justify-center px-4">
+        <div className="flex flex-col items-center justify-center md:flex-row">
+          {/* Image for mobile, order-first on mobile, order-last on md */}
+          <div className="relative z-10 flex w-full items-center justify-center md:order-last md:w-1/2">
             <Image
               src="/sheenprezzo2.webp"
               alt="SHEEN PREZZO"
               width={500}
               height={500}
-              className="object-contain max-h-[90%] max-w-full float-animation"
+              className="float-animation max-h-[90%] max-w-full object-contain"
               style={{
-                filter: 'drop-shadow(0px 10px 15px rgba(0, 0, 0, 0.5))'
+                filter: "drop-shadow(0px 10px 15px rgba(0, 0, 0, 0.5))",
               }}
             />
           </div>
-        </div>
-        {/* Duplicated text with stroke only - top layer */}
-        <div className="absolute inset-0 z-20 flex flex-col justify-center">
-          <h1 className="text-[10rem] md:text-[16rem] font-extrabold leading-[0.8] tracking-tighter text-center">
-            <div className="text-stroke">SHEEN</div>
-            <div className="text-stroke">PREZZO</div>
-          </h1>
+
+          {/* Combined Text Container */}
+          <div className="relative w-full text-center md:order-first md:w-1/2">
+            {/* Normal Text */}
+            <h1 className="text-[5rem] leading-[0.8] font-extrabold tracking-tighter text-white md:text-[16rem]">
+              <div className="opacity-80">SHEEN</div>
+              <div className="opacity-80">PREZZO</div>
+            </h1>
+            {/* Stroke Text - Absolutely positioned over normal text */}
+            <div className="absolute z-20 inset-0 flex flex-col justify-center z-20"> 
+              <h1 className="text-[5rem] leading-[0.8] font-extrabold tracking-tighter text-center md:text-[16rem]">
+                <div className="text-stroke">SHEEN</div>
+                <div className="text-stroke">PREZZO</div>
+              </h1>
+            </div>
+          </div>
         </div>
       </div>
     </section>
