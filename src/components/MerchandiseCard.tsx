@@ -32,7 +32,7 @@ const MerchandiseCard: React.FC<MerchandiseCardProps> = ({
           href={`https://wa.me/254743098036?text=I%20want%20to%20buy%20${encodeURIComponent(title)}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="block w-full rounded-md bg-green-600 py-2 text-center font-medium text-white transition-colors hover:bg-green-700"
+          className="block w-full rounded-md bg-yellow-600 py-2 text-center font-medium text-white transition-colors hover:bg-yellow-700"
         >
           Buy Now
         </a>
